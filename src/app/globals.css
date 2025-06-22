@@ -128,4 +128,38 @@
   body {
     @apply bg-background text-foreground;
   }
+  
+  /* Global link hover styles */
+  a {
+    @apply transition-colors duration-200;
+  }
+  
+  a:hover:not(.no-hover):not([class*="button"]):not([class*="btn"]) {
+    @apply text-primary;
+  }
+  
+  /* Override for buttons and components that should not use global hover */
+  .no-hover:hover {
+    @apply text-inherit;
+  }
+  
+  /* Cart bounce animation */
+  .cart-bounce {
+    animation: bounce 1s infinite;
+  }
+  
+  @keyframes bounce {
+    0%, 20%, 53%, 80%, 100% {
+      transform: translate3d(0,0,0);
+    }
+    40%, 43% {
+      transform: translate3d(0,-30px,0);
+    }
+    70% {
+      transform: translate3d(0,-15px,0);
+    }
+    90% {
+      transform: translate3d(0,-4px,0);
+    }
+  }
 }
