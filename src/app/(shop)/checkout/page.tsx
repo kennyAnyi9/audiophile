@@ -113,7 +113,7 @@ export default function CheckoutPage() {
                             name="name"
                             value={formData.name}
                             onChange={handleInputChange}
-                            className="w-full h-full text-black/40"
+                            className="w-full h-full"
                             placeholder="Alexei Ward"
                             required
                           />
