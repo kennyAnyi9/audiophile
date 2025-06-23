@@ -34,10 +34,18 @@ export async function generateMetadata({
   }
 
   return {
-    title: `${product.name} | Audiophile`,
-    description: product.description,
+    title: `${product.name} - Premium Audio | Audiophile`,
+    description: `${product.description} Experience exceptional sound quality and craftsmanship with this premium audio product from Audiophile.`,
+    keywords: [product.name, product.category, 'premium audio', 'audiophile', 'high-quality sound'],
     openGraph: {
-      title: product.name,
+      title: `${product.name} - Premium Audio`,
+      description: product.description,
+      images: [product.image.desktop],
+      type: 'website',
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: `${product.name} - Premium Audio`,
       description: product.description,
       images: [product.image.desktop],
     },

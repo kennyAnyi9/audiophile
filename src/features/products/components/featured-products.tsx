@@ -98,7 +98,7 @@ export default function FeaturedProducts() {
               <h2 className="text-3xl sm:text-4xl font-bold text-black mb-6 lg:mb-8 tracking-wide uppercase">
                 YX1 Earphones
               </h2>
-              <Link href="/products/yx1-earphones">
+              <Link href="/products/yx1-wireless-earphones">
                 <Button variant="outline" size="lg">
                   See Product
                 </Button>
