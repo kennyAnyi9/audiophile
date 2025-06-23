@@ -53,7 +53,7 @@
   --primary: oklch(67.92% 0.131 48.59);
   --primary-foreground: oklch(100% 0 0);
   --primary-hover: oklch(81.72% 0.105 49.7);
-  --muted-foreground: oklch(98.51% 0 0);
+  --muted-foreground: oklch(50% 0 0);
   --gray-background: oklch(95.81% 0 0);
 
   --destructive: oklch(55.46% 0.197 26.53);
