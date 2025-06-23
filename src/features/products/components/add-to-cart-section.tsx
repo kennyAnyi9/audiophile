@@ -4,6 +4,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { useCart } from "@/features/cart/stores/cart-store";
 import { Product } from "@/features/products/types/product.types";
+import { toast } from "sonner";
 
 interface AddToCartSectionProps {
   product: Product;
@@ -45,8 +46,8 @@ export default function AddToCartSection({ product }: AddToCartSectionProps) {
       quantity,
     });
     
-    // Simple success feedback (you can replace with toast notification later)
-    alert(`Added ${quantity} ${product.name} to cart!`);
+    // Show success toast notification
+    toast.success(`${product.name} was added to your cart`);
     setQuantity(1); // Reset quantity after adding
   }
 

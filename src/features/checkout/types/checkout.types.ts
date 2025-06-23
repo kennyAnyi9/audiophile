@@ -2,23 +2,7 @@
  * Checkout-related type definitions
  */
 
-// Using inline cart types since cart types are defined in cart-store
-interface CartItem {
-  id: number;
-  slug: string;
-  name: string;
-  price: number;
-  image: string;
-  quantity: number;
-}
-
-interface CartSummary {
-  subtotal: number;
-  shipping: number;
-  vat: number;
-  total: number;
-  itemCount: number;
-}
+import type { CartItem, CartSummary } from "@/features/cart/types/cart.types";
 
 export interface BillingDetails {
   name: string;

@@ -72,14 +72,14 @@ const audiophileProducts = [
       }
     ],
     image: {
-      mobile: "/product-yx1-earphones/mobile/image-product.jpg",
-      tablet: "/product-yx1-earphones/tablet/image-product.jpg",
-      desktop: "/product-yx1-earphones/desktop/image-product.jpg"
+      mobile: "/assets/product-yx1-earphones/mobile/image-product.jpg",
+      tablet: "/assets/product-yx1-earphones/tablet/image-product.jpg",
+      desktop: "/assets/product-yx1-earphones/desktop/image-product.jpg"
     },
     categoryImage: {
-      mobile: "/product-yx1-earphones/mobile/image-category-page-preview.jpg",
-      tablet: "/product-yx1-earphones/tablet/image-category-page-preview.jpg",
-      desktop: "/product-yx1-earphones/desktop/image-category-page-preview.jpg"
+      mobile: "/assets/product-yx1-earphones/mobile/image-category-page-preview.jpg",
+      tablet: "/assets/product-yx1-earphones/tablet/image-category-page-preview.jpg",
+      desktop: "/assets/product-yx1-earphones/desktop/image-category-page-preview.jpg"
     }
   },
   {

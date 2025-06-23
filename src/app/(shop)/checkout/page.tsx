@@ -1,16 +1,18 @@
 "use client";
 
-import React, { useState } from "react";
-import Image from "next/image";
-import Link from "next/link";
-import { useCart } from "@/features/cart/stores/cart-store";
+import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
+import { useCart } from "@/features/cart/stores/cart-store";
 import { ChevronDown, ChevronUp } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import Image from "next/image";
+import Link from "next/link";
+import React, { useState } from "react";
+import { toast } from "sonner";
 
 export default function CheckoutPage() {
-  const { items, getSubtotal, getShipping, getVAT, getTotalPrice, clearCart } = useCart();
+  const { items, getSubtotal, getShipping, getVAT, getTotalPrice, clearCart } =
+    useCart();
   const [showThankYou, setShowThankYou] = useState(false);
   const [isExpanded, setIsExpanded] = useState(false);
 
@@ -44,6 +46,9 @@ export default function CheckoutPage() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setShowThankYou(true);
+    toast.success("Order placed successfully!", {
+      duration: 4000,
+    });
   };
 
   const handleContinue = () => {
@@ -242,7 +247,7 @@ export default function CheckoutPage() {
                               value="e-money"
                               checked={formData.paymentMethod === "e-money"}
                               onChange={handleInputChange}
-                              className="w-5 h-5 text-primary border-gray-300 focus:ring-primary focus:ring-2"
+                              className="w-5 h-5 text-primary border-gray-300 focus:ring-primary focus:ring-2 accent-primary"
                             />
                             <span className="ml-3 text-sm font-medium text-black">
                               e-Money
@@ -255,7 +260,7 @@ export default function CheckoutPage() {
                               value="cash"
                               checked={formData.paymentMethod === "cash"}
                               onChange={handleInputChange}
-                              className="w-5 h-5 text-primary border-gray-300 focus:ring-primary focus:ring-2"
+                              className="w-5 h-5 text-primary border-gray-300 focus:ring-primary focus:ring-2 accent-primary"
                             />
                             <span className="ml-3 text-sm font-medium text-black">
                               Cash on Delivery
@@ -407,6 +412,7 @@ export default function CheckoutPage() {
           className="w-full max-w-[540px] sm:max-w-[540px] md:max-w-[540px] p-8 bg-white"
           onPointerDownOutside={(e) => e.preventDefault()}
           onEscapeKeyDown={(e) => e.preventDefault()}
+          showCloseButton={false}
         >
           <div className="flex flex-col gap-6">
             <div className="flex flex-col gap-6">

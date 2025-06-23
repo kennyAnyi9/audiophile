@@ -2,6 +2,7 @@
 
 import Image from 'next/image'
 import { useCart, CartItem as CartItemType } from '@/features/cart/stores/cart-store'
+import { toast } from 'sonner'
 
 interface CartItemProps {
   item: CartItemType
@@ -17,7 +18,15 @@ export default function CartItem({ item }: CartItemProps) {
   }
 
   function handleDecrement() {
-    updateQuantity(item.id, item.quantity - 1)
+    const newQuantity = item.quantity - 1;
+    updateQuantity(item.id, newQuantity);
+    
+    if (newQuantity === 0) {
+      toast.success('Item removed', {
+        description: `${item.name} removed from cart`,
+        duration: 2000,
+      });
+    }
   }
 
   return (

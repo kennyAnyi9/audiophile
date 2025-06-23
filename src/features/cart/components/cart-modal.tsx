@@ -3,6 +3,7 @@
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import { useCart } from '@/features/cart/stores/cart-store'
+import { toast } from 'sonner'
 import CartItem from './cart-item'
 
 interface CartModalProps {
@@ -39,7 +40,13 @@ export default function CartModal({ isOpen, onClose }: CartModalProps) {
             </h2>
             {!isEmpty && (
               <button
-                onClick={clearCart}
+                onClick={() => {
+                  clearCart();
+                  toast.success('Cart cleared', {
+                    description: 'All items removed from cart',
+                    duration: 2000,
+                  });
+                }}
                 className="text-[15px] leading-[25px] text-black/50 underline hover:text-black transition-colors"
               >
                 Remove all
